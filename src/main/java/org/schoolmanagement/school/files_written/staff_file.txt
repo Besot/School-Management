@@ -1,0 +1,5 @@
+StaffID: gregory01 || Email: ogregory+teacher+academy@chalk.com || First Name: Oliver || Last Name: Gregory
+StaffID: lloyd01 || Email: slloyd+teacher+academy@chalk.com || First Name: Shelley || Last Name: Lloyd
+StaffID: osbourne01 || Email: lsobourne+teacher+academy@chalk.com || First Name: Lee || Last Name: Osbourne
+StaffID: walton01 || Email: jwalton+teacher+academy@chalk.com || First Name: Joesphine || Last Name: Walton
+StaffID: fernandez01 || Email: ifernandez+support+teacher+academy@chalk.com || First Name: Inez || Last Name: Fernandez
