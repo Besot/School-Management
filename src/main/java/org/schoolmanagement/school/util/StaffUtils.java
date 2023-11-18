@@ -1,12 +1,15 @@
 package org.schoolmanagement.school.util;
 
 import org.schoolmanagement.school.entities.Staff;
+import org.schoolmanagement.school.entities.enums.Role;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StaffUtils {
+
+    //ArrayList to store data from the csv file
     public static List<Staff> listOfStaff = new ArrayList<>();
 
     public void staffListCsv(String fileName){
@@ -18,6 +21,7 @@ public class StaffUtils {
             while ((line = readStaff.readLine()) != null) {
                 if (isHeader) {
 
+             //Skips the header row
                     isHeader = false;
                     continue;
                 }
@@ -26,7 +30,7 @@ public class StaffUtils {
 
                 for (int i = 0; i < col.length; i++) {
                     if (col[i].isBlank()) {
-                        col = null;
+                        col[i] = null;
 
                     }
                 }
@@ -41,10 +45,11 @@ public class StaffUtils {
                 staffData.setFirstName(firstName);
                 staffData.setLastName(lastName);
 
+
                 listOfStaff.add(staffData);
             }
-             for (Staff data : listOfStaff) {
-               System.out.println(data);
+             for (Staff teacher : listOfStaff) {
+               System.out.println(teacher);
         }
             } catch (IOException e){
              e.printStackTrace();
@@ -53,10 +58,10 @@ public class StaffUtils {
     }
     public static void writeStaffFileToTxt(String filePath){
         try(
-                BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));)
+                BufferedWriter writer = new BufferedWriter(new FileWriter(filePath)))
         {
-            for(Staff data :listOfStaff){
-                writer.write(String.valueOf(data));
+            for(Staff teacher :listOfStaff){
+                writer.write(String.valueOf(teacher));
                 writer.newLine();
             }
 

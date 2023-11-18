@@ -1,16 +1,18 @@
 package org.schoolmanagement.school.util;
 
+import lombok.Data;
 import org.schoolmanagement.school.entities.Student;
+import org.schoolmanagement.school.entities.enums.Role;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 
 public class StudentUtil {
-
-
+    //ArrayList to store the data from the student csv file
     public static List<Student> studentList = new ArrayList<>();
+
 
     public void readStudentInfo(String fileName) throws IOException {
         String line;
@@ -21,6 +23,7 @@ public class StudentUtil {
 
         while ((line = readInfo.readLine()) != null) {
             if (isHeader) {
+
                 //skips the header row
                 isHeader = false;
                 continue;
@@ -43,20 +46,23 @@ public class StudentUtil {
             String isArchived = column[7];
             String isDeleted = column[8];
 
-            Student studentData = new Student();
-            studentData.setStudentIdNo(Id);
-            studentData.setFirstName(firstName);
-            studentData.setLastName(lastName);
-            studentData.setGradeLevel(gradeLevel);
-            studentData.setEmail(email);
-            studentData.setGuardianEmail1(guardianEmail1);
-            studentData.setGuardianEmail2(guardianEmail2);
-            studentData.setIsArchived(isArchived);
-            studentData.setIsDeleted(isDeleted);
 
-            studentList.add(studentData);
+
+                Student studentData = new Student();
+                studentData.setStudentIdNo(Id);
+                studentData.setFirstName(firstName);
+                studentData.setLastName(lastName);
+                studentData.setGradeLevel(gradeLevel);
+                studentData.setEmail(email);
+                studentData.setGuardianEmail1(guardianEmail1);
+                studentData.setGuardianEmail2(guardianEmail2);
+                studentData.setIsArchived(isArchived);
+                studentData.setIsDeleted(isDeleted);
+
+                studentList.add(studentData);
+
         }
-
+        // for each statement to traverse the list
         for (Student student : studentList) {
             System.out.println(student);
         }

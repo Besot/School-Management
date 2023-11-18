@@ -1,14 +1,10 @@
 package org.schoolmanagement.school.serviceImpli;
 
 import org.schoolmanagement.school.entities.Student;
-import org.schoolmanagement.school.entities.enumz.Behaviour;
-import org.schoolmanagement.school.entities.enumz.CurrentClass;
+import org.schoolmanagement.school.entities.enums.Behaviour;
 import org.schoolmanagement.school.services.StudentServices;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class StudentServicesImple implements StudentServices {
+public class StudentServicesImpl implements StudentServices {
     @Override
     public void promoteStudent(Student student) {
         //setting student info

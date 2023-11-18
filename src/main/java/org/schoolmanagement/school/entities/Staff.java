@@ -1,16 +1,21 @@
 package org.schoolmanagement.school.entities;
 
-import org.schoolmanagement.school.entities.enumz.Gender;
-import org.schoolmanagement.school.entities.enumz.Role;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.schoolmanagement.school.entities.enums.Gender;
+import org.schoolmanagement.school.entities.enums.Role;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Objects;
-    // A class for staff details with enums to identify each role
+// A class for staff details with enums to identify each role
     //  Principal, Teacher, non-academic staff
+
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class Staff extends User {
-    private  String staffId;
-    private Role role;
+        //  getters and setters to access the private fields in the staff class  when needed in other classes
+        private  String staffId;
+  //  private Role role;
     private String qualification;
     private BigDecimal salary;
 
@@ -18,7 +23,7 @@ public class Staff extends User {
     public  void staffDetail() {
 
                 this.setFirstName("Olamide Besot");
-                this.setRole(Role.Teacher);
+                this.setRole(Role.TEACHER);
                 this.setStaffId("32443TE");
                 this.setGender(Gender.Male);
                 this.setPhoneNo(234_830_229_749L);
@@ -46,39 +51,23 @@ public class Staff extends User {
 
 
         }
-        //  getters and setters to access the private fields in the staff class  when needed in other classes
-    public String getStaffId() {
-        return staffId;
-    }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId;
-    }
+//        public void setStaffId(String staffId) {
+//        this.staffId = staffId;
+//    }
+//
+//        public void setRole(Role role) {
+//        this.role = role;
+//    }
+//
+//        public void setQualification(String qualification) {
+//        this.qualification = qualification;
+//    }
+//
+//        public void setSalary(BigDecimal salary) {
+//        this.salary = salary;
 
-    public Role getRole() {
-        return role;
-    }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public String getQualification() {
-        return qualification;
-    }
-
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
-    }
-
-    public BigDecimal getSalary() {
-        return salary;
-    }
-
-    public void setSalary(BigDecimal salary) {
-        this.salary = salary;
-
-    }
 
     @Override
     public String toString() {

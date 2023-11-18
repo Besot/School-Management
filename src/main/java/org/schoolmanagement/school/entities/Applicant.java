@@ -1,8 +1,7 @@
 package org.schoolmanagement.school.entities;
 
-import org.schoolmanagement.school.entities.enumz.Gender;
+import org.schoolmanagement.school.entities.enums.Gender;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Applicant extends User {

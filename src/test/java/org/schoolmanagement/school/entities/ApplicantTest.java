@@ -1,7 +1,7 @@
 package org.schoolmanagement.school.entities;
 
 import org.junit.jupiter.api.Test;
-import org.schoolmanagement.school.entities.enumz.Gender;
+import org.schoolmanagement.school.entities.enums.Gender;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +10,7 @@ class ApplicantTest {
     @Test
     void getApplicationDateD() {
         Applicant app = new Applicant();
-        app.setName("Banjo");
+        app.setFirstName("Banjo");
         app.setAge(12);
         app.setGender(Gender.Male);
         app.setApplicationDate("20/01/2023");

@@ -1,12 +1,9 @@
 package org.schoolmanagement.school.serviceImpli;
 
 import org.schoolmanagement.school.entities.Applicant;
-import org.schoolmanagement.school.entities.enumz.Gender;
 import org.schoolmanagement.school.services.ApplicantServices;
 
-import java.util.ArrayList;
-
-public class ApplicantServicesImpli implements ApplicantServices {
+public class ApplicantServicesImpl implements ApplicantServices {
     @Override
     public void admitStudent(Applicant applicant) {
 

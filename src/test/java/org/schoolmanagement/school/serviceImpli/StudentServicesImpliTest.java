@@ -2,25 +2,26 @@ package org.schoolmanagement.school.serviceImpli;
 
 import org.junit.jupiter.api.Test;
 import org.schoolmanagement.school.entities.Student;
+import org.schoolmanagement.school.entities.enums.Behaviour;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class StudentServicesImpliTest {
-    StudentServicesImpli studentService = new StudentServicesImpli();
+    StudentServicesImpl studentService = new StudentServicesImpl();
 
     @Test
-    void expelStudentsBasedOnNumberOfSuspensionGreaterThan3() {
+    void expelStudentsBasedOnBehavior() {
         Student student = new Student();
-        student.setTimesSuspended(5);
-        assertEquals("You have been expelled",studentService.expelStudent(student));
+        student.setBehavior(Behaviour.MALPRACTICE);
+        assertEquals("Due to an act of " + student.getBehavior() + ", You have been EXPELLED!",studentService.expelStudent(student));
     }
 
     @Test
-    void expelStudentsBasedOnNumberOfSuspensionLessThan3() {
+    void DoNotExpelStudentsBasedOnBehavior() {
         Student student = new Student();
-        student.setTimesSuspended(2);
-        assertEquals("You will be expelled at the 3rd suspension - One last chance",studentService.expelStudent(student));
+        student.setBehavior(Behaviour.HONEST);
+        assertEquals("",studentService.expelStudent(student));
     }
 
 
